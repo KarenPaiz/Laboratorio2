@@ -1,0 +1,18 @@
+﻿@model Laboratorio_2.Models.Visitador
+@{
+    ViewBag.Title = "NuevoEmpleado";
+}
+
+<h2>Agregar un nuevo empleado</h2>
+<form action="/Visitador/Ingresa" method="post">
+    <h3>Nombre:</h3>
+    <input type="text" name="Nombre" />
+    <br><br />
+    <h3>Código:</h3>
+    <input type="number" name="Codigo" />
+    <br><br />
+    <h3>Hora de llegada(ingresar numero entero de 0 a 24):</h3>
+    <input type="number" name="HoraLlegada" />
+    <br><br />
+    <input type="submit" value="Agregar" />
+</form>

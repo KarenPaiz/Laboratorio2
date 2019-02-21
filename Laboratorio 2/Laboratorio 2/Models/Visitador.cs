@@ -12,14 +12,19 @@ namespace Laboratorio_2.Models
         public int Codigo { get; set; }
         public int HoraLlegada { get; set; }
         public int NumCitas;
-        public int HoraRegreso;
+        public double HoraRegreso;
         public bool diponible = true;
-        public int CantHoras;
-        public float Sueldo;
-        public Visitador ()
+        public double CantHoras;
+        public double Sueldo;
+        public string Oficina = "En oficina";
+        public void Calcular ()
         {
             Random num = new Random();
             NumCitas = num.Next(0,4);
+            CantHoras = 3 + (NumCitas * 1.5);
+            HoraRegreso = HoraLlegada + CantHoras;
+            Sueldo = CantHoras * 38;
+            
         }
 
         

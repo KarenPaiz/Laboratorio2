@@ -1,0 +1,25 @@
+﻿@model Laboratorio_2.Models.Visitador[]
+@{
+    /**/
+
+    ViewBag.Title = "EmpleadosJornadaFinalizada";
+}
+
+<h2>Lista de empleados que finalizaron su jornada</h2>
+@try
+ {
+    for (int i = 0; i < Model.Length; i++)
+     {
+
+        <h4>Nombre: @Model[i].Nombre. //  Código: @Model[i].Codigo. // Hora de llegada: @Model[i].HoraLlegada.  //  Hora de regreso: @Model[i].HoraRegreso.  //   Horas trabajadas: @Model[i].CantHoras.  //  Sueldo: Q.@Model[i].Sueldo</h4>  
+
+     }
+ }
+catch { }
+
+
+
+<h2></h2>
+<form action="/Visitador/MostrarEmpleados" method="post">
+    <input type="submit" value="Regresar" />
+</form>

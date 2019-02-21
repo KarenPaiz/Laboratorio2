@@ -199,6 +199,12 @@
     <Content Include="Views\Visitador\NuevoEmpleado.cshtml" />
     <Content Include="Views\Visitador\MostrarEmpleados.cshtml" />
     <Content Include="Views\Visitador\Ingresa.cshtml" />
+    <Content Include="Views\Visitador\EnviarEmpleado.cshtml" />
+    <Content Include="Views\Visitador\MetodoEnviarEmpleado.cshtml" />
+    <Content Include="Views\Visitador\RegresarEmpleado.cshtml" />
+    <Content Include="Views\Visitador\MetodoRegresarEmpleado.cshtml" />
+    <Content Include="Views\Visitador\EmpleadosTrabajando.cshtml" />
+    <Content Include="Views\Visitador\EmpleadosJornadaFinalizada.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

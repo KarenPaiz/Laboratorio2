@@ -1,0 +1,11 @@
+﻿@model Laboratorio_2.Models.Visitador
+@{
+    ViewBag.Title = "RegresarEmpleado";
+}
+
+<h2>Regreso de empleado a oficina</h2>
+<h4>El siguiente empleado en regresar de trabajar es @Model.Nombre.</h4>
+<form action="/Visitador/MetodoRegresarEmpleado" method="post">
+    <input type="submit" value="Regreso a la oficina" />
+</form>
+

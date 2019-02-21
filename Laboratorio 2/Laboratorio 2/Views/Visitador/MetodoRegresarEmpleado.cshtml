@@ -1,0 +1,12 @@
+﻿@model Laboratorio_2.Models.Visitador
+@{
+    ViewBag.Title = "MetodoRegresarEmpleado";
+}
+
+<h3>El empleado ha terminado su jornada</h3>
+<h5>Horas trabajadas: @Model.CantHoras  </h5>
+<h5>Horas de llegada: @Model.HoraRegreso  </h5>
+<form action="/Visitador/MostrarEmpleados" method="post">
+    <input type="submit" value="Regresar" />
+</form>
+

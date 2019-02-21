@@ -1,0 +1,13 @@
+﻿@model Laboratorio_2.Models.Visitador
+@{
+                /**/
+
+                ViewBag.Title = "EnviarEmpleado";
+}
+
+<h2>Enviar empleado a trabajar</h2>
+<h4>El siguiente empleado en salir a trabajar es @Model.Nombre.</h4>
+<form action="/Visitador/MetodoEnviarEmpleado" method="post">
+    <input type="submit" value="Enviar a trabajar" />
+</form>
+

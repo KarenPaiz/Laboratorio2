@@ -205,6 +205,10 @@
     <Content Include="Views\Visitador\MetodoRegresarEmpleado.cshtml" />
     <Content Include="Views\Visitador\EmpleadosTrabajando.cshtml" />
     <Content Include="Views\Visitador\EmpleadosJornadaFinalizada.cshtml" />
+    <Content Include="Views\Visitador\BUSQUEDA.cshtml" />
+    <Content Include="Views\Visitador\BUSQUEDA2.cshtml" />
+    <Content Include="Views\Visitador\BuscarNombre.cshtml" />
+    <Content Include="Views\Visitador\BuscarNombre2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

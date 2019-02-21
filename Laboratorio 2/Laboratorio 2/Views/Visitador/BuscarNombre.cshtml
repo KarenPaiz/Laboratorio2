@@ -1,0 +1,30 @@
+﻿@model Laboratorio_2.Models.Visitador
+@{
+    ViewBag.Title = "BuscarNombre";
+}
+
+<h2>Empleado</h2>
+<h2>El empleado buscado por nombre es: </h2>
+<table style="width:100%">
+    <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+    </tr>
+
+    <tr>
+        <td>
+            @Model.Codigo
+        </td>
+        <td>
+            @Model.Nombre
+        </td>
+    </tr>
+
+
+</table>
+
+<br />
+<br />
+<p align="center">
+    <a href="http://localhost:49411/Visitador/MostrarEmpleados"><input type="button" value="Volver a la Lista"></a>
+</p>

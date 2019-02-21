@@ -13,6 +13,7 @@ namespace Laboratorio_2.Controllers
         public static LinkedList<Visitador> Visitadores = new LinkedList<Visitador>();
         public static Stack<Visitador> PilaVisitadores = new Stack<Visitador>();
         public static Queue<Visitador> ColaVisitadores = new Queue<Visitador>();
+        public static List<Visitador> ListaEgresados = new List<Visitador>();
         static Visitador v1;
         
 
@@ -28,15 +29,8 @@ namespace Laboratorio_2.Controllers
         }
         public ActionResult EmpleadosJornadaFinalizada()
         {
-            Visitador[] Visi = new Visitador[20];
-            int cont = 0;
-            foreach (Visitador item in Visitadores)
-            {
-                if (item.Oficina== "Jornada terminada")
-                {
-                    Visi[cont] = item;
-                }
-            }
+            Visitador[] Visi;
+            Visi = ListaEgresados.ToArray();
             return View(Visi);
         }
         public ActionResult EmpleadosTrabajando()
@@ -58,10 +52,6 @@ namespace Laboratorio_2.Controllers
             PilaVisitadores.Push(v1);
             return View();
         }
-        public ActionResult BUSQUEDA ()
-        {
-            return View();
-        }
         public ActionResult EnviarEmpleado()
         {
             Visitador v2 = new Visitador();
@@ -78,6 +68,7 @@ namespace Laboratorio_2.Controllers
             try
             {
                 v2 = PilaVisitadores.First<Visitador>();
+                v2.Calcular();
                 ColaVisitadores.Enqueue(v2);
                 PilaVisitadores.Pop();
                 foreach (Visitador item in Visitadores)
@@ -98,6 +89,7 @@ namespace Laboratorio_2.Controllers
             try
             {
                 v2 = ColaVisitadores.First<Visitador>();
+                v2.Calcular();
             }
             catch { }
             return View(v2);
@@ -108,6 +100,8 @@ namespace Laboratorio_2.Controllers
             try
             {
                 v2 = ColaVisitadores.Dequeue();
+                v2.Calcular();
+                ListaEgresados.Add(v2);
                 foreach (Visitador item in Visitadores)
                 {
                     if (v2.Nombre == item.Nombre)
@@ -118,6 +112,40 @@ namespace Laboratorio_2.Controllers
             }
             catch { }
             return View(v2);
+        }
+        public ActionResult BUSQUEDA()
+        {
+            var visi = Visitadores;
+            foreach (var item in visi)
+            {
+                if (Convert.ToInt32(Request.Form["Codigo"]) == item.Codigo)
+                {
+                    Visitador BuscarC = new Visitador { Codigo = item.Codigo, Nombre = item.Nombre };
+                    return View(BuscarC);
+                }
+            }
+            return View();
+        }
+        public ActionResult BUSQUEDA2()
+        {
+            return View();
+        }
+        public ActionResult BuscarNombre()
+        {
+            var visi = Visitadores;
+            foreach (var item in visi)
+            {
+                if ((Request.Form["Nombre"]) == item.Nombre)
+                {
+                    Visitador BuscarN = new Visitador { Codigo = item.Codigo, Nombre = item.Nombre };
+                    return View(BuscarN);
+                }
+            }
+            return View();
+        }
+        public ActionResult BuscarNombre2()
+        {
+            return View();
         }
     }
 }
